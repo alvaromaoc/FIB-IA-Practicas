@@ -1,0 +1,337 @@
+; Mon Dec 14 18:17:54 CET 2020
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(multislot Preferencias_Pintor
+		(type INSTANCE)
+;+		(allowed-classes Pintor)
+		(create-accessor read-write))
+	(single-slot Titulo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Horas
+		(type INTEGER)
+		(range %3FVARIABLE 10)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot MuseuACA_Class3
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Personas
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Nombre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Cuadro_Estilo
+		(type INSTANCE)
+;+		(allowed-classes Estilo)
+;+		(cardinality 0 1)
+;+		(inverse-slot Estilo_Cuadro)
+		(create-accessor read-write))
+	(multislot Preferencias_Tematica
+		(type INSTANCE)
+;+		(allowed-classes Tematica)
+		(create-accessor read-write))
+	(multislot Estilo_Pintor
+		(type INSTANCE)
+;+		(allowed-classes Pintor)
+;+		(inverse-slot Pintor_Estilo)
+		(create-accessor read-write))
+	(multislot Pintor_Estilo
+		(type INSTANCE)
+;+		(allowed-classes Estilo)
+;+		(inverse-slot Estilo_Pintor)
+		(create-accessor read-write))
+	(single-slot Dimensiones
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Mas_Ninos
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Tiempo
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Conocimiento
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Complejidad
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Relevancia
+		(type INTEGER)
+		(range 1 3)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot Epoca_Cuadro
+		(type INSTANCE)
+;+		(allowed-classes Cuadro)
+;+		(inverse-slot Cuadro_Epoca)
+		(create-accessor read-write))
+	(multislot Estilo_Cuadro
+		(type INSTANCE)
+;+		(allowed-classes Cuadro)
+;+		(inverse-slot Cuadro_Estilo)
+		(create-accessor read-write))
+	(single-slot Ninos
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Cuadro_Pintor
+		(type INSTANCE)
+;+		(allowed-classes Pintor)
+;+		(cardinality 0 1)
+;+		(inverse-slot Pintor_Cuadro)
+		(create-accessor read-write))
+	(multislot Preferencias_Epoca
+		(type INSTANCE)
+;+		(allowed-classes Epoca)
+		(create-accessor read-write))
+	(single-slot Anyo
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot Pintor_Cuadro
+		(type INSTANCE)
+;+		(allowed-classes Cuadro)
+;+		(inverse-slot Cuadro_Pintor)
+		(create-accessor read-write))
+	(multislot Epoca_Pintor
+		(type INSTANCE)
+;+		(allowed-classes Pintor)
+;+		(inverse-slot Pintor_Epoca)
+		(create-accessor read-write))
+	(single-slot Visita_Preferencias
+		(type INSTANCE)
+;+		(allowed-classes Preferencias)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Cuadro_Epoca
+		(type INSTANCE)
+;+		(allowed-classes Epoca)
+;+		(cardinality 0 1)
+;+		(inverse-slot Epoca_Cuadro)
+		(create-accessor read-write))
+	(single-slot Dias
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot Tematica_Cuadro
+		(type INSTANCE)
+;+		(allowed-classes Cuadro)
+;+		(inverse-slot Cuadro_Tematica)
+		(create-accessor read-write))
+	(multislot Cuadro_Tematica
+		(type INSTANCE)
+;+		(allowed-classes Tematica)
+;+		(inverse-slot Tematica_Cuadro)
+		(create-accessor read-write))
+	(single-slot Nacionalidad
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot Preferencias_Estilo
+		(type INSTANCE)
+;+		(allowed-classes Estilo)
+		(create-accessor read-write))
+	(multislot Pintor_Epoca
+		(type INSTANCE)
+;+		(allowed-classes Epoca)
+;+		(inverse-slot Epoca_Pintor)
+		(create-accessor read-write))
+	(single-slot Sala
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Cuadro
+	(is-a USER)
+	(role concrete)
+	(single-slot Cuadro_Epoca
+		(type INSTANCE)
+;+		(allowed-classes Epoca)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Cuadro_Estilo
+		(type INSTANCE)
+;+		(allowed-classes Estilo)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Dimensiones
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Cuadro_Pintor
+		(type INSTANCE)
+;+		(allowed-classes Pintor)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Complejidad
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Anyo
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Relevancia
+		(type INTEGER)
+		(range 1 3)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Titulo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Sala
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot Cuadro_Tematica
+		(type INSTANCE)
+;+		(allowed-classes Tematica)
+		(create-accessor read-write)))
+
+(defclass Epoca
+	(is-a USER)
+	(role concrete)
+	(single-slot Nombre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot Epoca_Pintor
+		(type INSTANCE)
+;+		(allowed-classes Pintor)
+		(create-accessor read-write))
+	(multislot Epoca_Cuadro
+		(type INSTANCE)
+;+		(allowed-classes Cuadro)
+		(create-accessor read-write)))
+
+(defclass Estilo
+	(is-a USER)
+	(role concrete)
+	(multislot Estilo_Cuadro
+		(type INSTANCE)
+;+		(allowed-classes Cuadro)
+		(create-accessor read-write))
+	(single-slot Nombre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot Estilo_Pintor
+		(type INSTANCE)
+;+		(allowed-classes Pintor)
+		(create-accessor read-write)))
+
+(defclass Pintor
+	(is-a USER)
+	(role concrete)
+	(single-slot Nombre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot Pintor_Estilo
+		(type INSTANCE)
+;+		(allowed-classes Estilo)
+		(create-accessor read-write))
+	(multislot Pintor_Epoca
+		(type INSTANCE)
+;+		(allowed-classes Epoca)
+		(create-accessor read-write))
+	(multislot Pintor_Cuadro
+		(type INSTANCE)
+;+		(allowed-classes Cuadro)
+		(create-accessor read-write))
+	(single-slot Nacionalidad
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Tematica
+	(is-a USER)
+	(role concrete)
+	(single-slot Nombre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot Tematica_Cuadro
+		(type INSTANCE)
+;+		(allowed-classes Cuadro)
+		(create-accessor read-write)))
+
+(defclass Visita
+	(is-a USER)
+	(role concrete)
+	(single-slot Personas
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Visita_Preferencias
+		(type INSTANCE)
+;+		(allowed-classes Preferencias)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Conocimiento
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Ninos
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Dias
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Mas_Ninos
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Tiempo
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Horas
+		(type INTEGER)
+		(range %3FVARIABLE 10)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Preferencias
+	(is-a USER)
+	(role concrete)
+	(multislot Preferencias_Estilo
+		(type INSTANCE)
+;+		(allowed-classes Estilo)
+		(create-accessor read-write))
+	(multislot Preferencias_Pintor
+		(type INSTANCE)
+;+		(allowed-classes Pintor)
+		(create-accessor read-write))
+	(multislot Preferencias_Epoca
+		(type INSTANCE)
+;+		(allowed-classes Epoca)
+		(create-accessor read-write))
+	(multislot Preferencias_Tematica
+		(type INSTANCE)
+;+		(allowed-classes Tematica)
+		(create-accessor read-write)))
