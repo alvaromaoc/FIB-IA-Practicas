@@ -1,0 +1,7 @@
+.idea/
+out/
+!META-INF/
+!src/
+!documentation/html/
+!data/
+!packages/
