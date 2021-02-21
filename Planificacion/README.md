@@ -1,4 +1,4 @@
-# Práctica de Planificación de Inteligencia Artificial
+# Práctica de Planificación
 
 ## Índice
 - [Generador de juegos de prueba](#generador-de-juegos-de-prueba)
@@ -11,16 +11,16 @@ Para su correcta ejecución seguir los siguientes pasos.
 
 Compilar el código con:
 ```shell
-> make
+$ make
 ```
 
 Generar los juegos de prueba con:
 ```shell
-> ./generador.bin
+$ ./generador.bin
 ```
 o en caso de Windows:
 ```shell
-> generador.bin
+$ generador.bin
 ```
 
 El resultado será un archivo de extensión ```pddl``` que contendrá el problema para ser ejecutado con Fast Forward.
@@ -28,16 +28,9 @@ El resultado será un archivo de extensión ```pddl``` que contendrá el problem
 ## Ejecución de Fast Forward
 Ejecutar los juegos de prueba con:
 ```shell
-> ./ff -o "archivo-del-dominio.pddl" -f "archivo-del-problema.pddl"
+$ ./ff -o "archivo-del-dominio.pddl" -f "archivo-del-problema.pddl"
 ```
 o bien en Windows:
 ```shell
-> ff.exe -o "archivo-del-dominio.pddl" -f "archivo-del-problema.pddl"
+$ ff.exe -o "archivo-del-dominio.pddl" -f "archivo-del-problema.pddl"
 ```
-
-## Autores
-> *Albert Obradors*
-
-> *Carles Pamies*
-
-> *Álvaro Mañoso*

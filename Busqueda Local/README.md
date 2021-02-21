@@ -1,10 +1,14 @@
-Para ejecutar, realizar doble click sobre ```Ejecutar.bat``` en caso de estar el Windows o ```Ejecutar.sh``` en caso de Linux
+# Práctica de Busqueda Local
+Para ejecutar, realizar doble click sobre `Ejecutar.bat` en caso de estar el Windows o `Ejecutar.sh` en caso de Linux
 
 Si no funciona el método anterior:
-1. Dirigirse al directorio out/artifacts/IA_Projecte
-2.  Ejecutar en la consola el comando siguiente
-    java -jar IA_Projecte.jar
+1. Dirigirse al directorio `out/artifacts/IA_Projecte`
+2.  Ejecutar en la consola el comando siguiente 
 
-Programa compilado con Java JDK8
+    ```shell
+    $ java -jar IA_Projecte.jar
+    ```
 
-Se ha incluido una documentación Doxygen a parte de la oficial en el directorio documentation/html/index.html en el zip del código fuente
+Programa compilado con *Java JDK8*
+
+Se ha incluido una documentación Doxygen a parte de la oficial en el directorio `documentation/html/index.html` en el zip del código fuente
